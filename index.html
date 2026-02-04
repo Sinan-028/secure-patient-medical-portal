@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Patient Medical Record Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Secure Patient Medical Record Portal</h1>
+  <p class="secure-note">🔒 Data is encrypted • 🛡️ Consent required for access</p>
+
+
+  <section class="card">
+    <h2>Patient Dashboard</h2>
+    <p><strong>Patient Name:</strong> John Doe</p>
+    <p><strong>Patient ID:</strong> PT-45821</p>
+    <p><strong>Data Status:</strong> 🔒 Encrypted</p>
+    <p><strong>Consent Status:</strong> ✅ Active</p>
+  </section>
+
+  
+  <section class="card">
+    <h2>Medical History Timeline</h2>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+ 
+  <section class="card">
+    <h2>Access Control</h2>
+    <table>
+      <tr>
+        <th>Hospital</th>
+        <th>Access</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>City Hospital</td>
+        <td id="city-status">✅ Granted</td>
+        <td>
+          <button onclick="revokeAccess('city')">Revoke</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Apollo Clinic</td>
+        <td id="apollo-status">❌ Revoked</td>
+        <td>
+          <button onclick="grantAccess('apollo')">Grant</button>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  
+  <section class="card emergency">
+    <h2>Emergency Access</h2>
+    <button class="emergency-btn" onclick="enableEmergencyAccess()">
+      🚨 Enable Emergency Access
+    </button>
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="fingerprint"></div>
+        <p><strong>Emergency Access Enabled</strong></p>
+        <p>⏱️ Valid for 30 minutes</p>
+        <button onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
