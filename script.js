@@ -5,7 +5,7 @@ const medicalHistory = [
   { year: 2025, record: "Surgery – Govt Medical College" }
 ];
 
-// Load timeline
+
 const timelineDiv = document.getElementById("timeline");
 medicalHistory.forEach(item => {
   const div = document.createElement("div");
@@ -14,7 +14,7 @@ medicalHistory.forEach(item => {
   timelineDiv.appendChild(div);
 });
 
-// Access control functions
+
 function grantAccess(hospital) {
   document.getElementById(`${hospital}-status`).innerText = "✅ Granted";
 }
@@ -23,7 +23,7 @@ function revokeAccess(hospital) {
   document.getElementById(`${hospital}-status`).innerText = "❌ Revoked";
 }
 
-// Emergency access modal
+
 function enableEmergencyAccess() {
   document.getElementById("modal").classList.remove("hidden");
 }
